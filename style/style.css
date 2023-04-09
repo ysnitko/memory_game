@@ -9,12 +9,18 @@ h3 {
 }
 
 label {
+    font-size: 14px;
     margin-left: 30px;
     color: lightslategray;
 }
 
 input {
     width: 30px;
+    margin-right: 10px;
+    border: none;
+    font-size: 20px;
+    background-color: lightcyan;
+    color: lightcoral;
 }
 
 table {
@@ -42,7 +48,29 @@ img {
     transition: opacity 0.3s  ease-in-out;;
 }
 
-span {
+.matches {
+    display: inline;
+    margin-left: 50px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
     color: lightcoral;
+}
+
+span {
+    margin-left: 20px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: lightcoral;
+    font-weight: 700;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: lightblue;
+    font-size: 16px;
+    color: aliceblue;
+    cursor: pointer;
 }
 

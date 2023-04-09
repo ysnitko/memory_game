@@ -31,4 +31,20 @@ const cards = [
     id: 8,
     src: './img/star.svg',
   },
+  {
+    id: 9,
+    src: './img/thumb.svg',
+  },
+  {
+    id: 10,
+    src: './img/tree.svg',
+  },
+  {
+    id: 11,
+    src: './img/plane.svg',
+  },
+  {
+    id: 12,
+    src: './img/target.svg',
+  },
 ];

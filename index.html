@@ -9,16 +9,17 @@
 </head>
 <body>
     
-    <h3>select game difficulty:</h3>
-   
-        <button onclick="insertTable(generateTable(4))"> Easy </button>
-        <button onclick="insertTable(generateTable(5))"> Medium </button>
-        <button onclick="insertTable(generateTable(6))"> Hardcore</button>
+    <h3>Select game difficulty:</h3>
 
-    <label for=""> matches:</label>
-    <input type="text" value="0" disabled>
-    <span> </span>
-    <button onclick="resetGame()"> reset </button>
+    <button onclick="setDifficultyLevel('easy')" data-level="easy"> Easy </button>
+    <button onclick="setDifficultyLevel('medium')" data-level="medium"> Medium </button>
+    <button onclick="setDifficultyLevel('hardcore')" data-level="hardcore"> Hardcore</button>
+
+    <p class="matches">Matches:</p>
+    <input  class="matches_score" type="text" value="0" disabled>
+    <p class="matches">Attemps:</p>
+    <input class="attemps_score" type="text" value="0" disabled>
+    <span></span>
     <div class="table-container"></div>
 
     <script src="./script/data.js"></script>
