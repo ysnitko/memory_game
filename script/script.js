@@ -20,6 +20,17 @@ function generateTable(n, k) {
   return table;
 }
 
+function insertTable(table) {
+  const wrapper = document.querySelector('.table-container');
+  if (wrapper.firstElementChild) {
+    wrapper.replaceChild(table, wrapper.firstElementChild);
+  } else {
+    wrapper.append(table);
+  }
+  resetGame();
+  table.addEventListener('click', onClick);
+}
+
 function onClick(event) {
   let target = event.target;
   if (target.tagName !== 'IMG') {
@@ -46,22 +57,24 @@ function onClick(event) {
       }
     }
   }
-}
-
-function insertTable(table) {
-  const wrapper = document.querySelector('.table-container');
-  if (wrapper.firstElementChild) {
-    wrapper.replaceChild(table, wrapper.firstElementChild);
-  } else {
-    wrapper.append(table);
-  }
-  resetGame();
-  table.addEventListener('click', onClick);
+  // console.log(target);
 }
 
 function hideCards() {
   openCards.forEach((card) => card.classList.add('hidden'));
   openCards.length = 0;
+}
+
+function fillCells(cardsArray) {
+  const tableTd = document.querySelectorAll('td');
+  let i = 0;
+  cardsArray.sort(() => Math.random() - 0.5);
+  tableTd.forEach(
+    (item) => (
+      (item.innerHTML = `<img class="hidden" src="${cardsArray[i].src}" data-id="${cardsArray[i].id}">`),
+      i++
+    )
+  );
 }
 
 function fillCellsEasy(cards) {
@@ -80,18 +93,6 @@ function fillCellsHard(cards) {
   let hardcore = cards.slice(0, 12);
   cardsArray = [...hardcore, ...hardcore];
   return cardsArray;
-}
-
-function fillCells(cardsArray) {
-  const tableTd = document.querySelectorAll('td');
-  let i = 0;
-  cardsArray.sort(() => Math.random() - 0.5);
-  tableTd.forEach(
-    (item) => (
-      (item.innerHTML = `<img class="hidden" src="${cardsArray[i].src}" data-id="${cardsArray[i].id}">`),
-      i++
-    )
-  );
 }
 
 function setDifficultyLevel(level) {
